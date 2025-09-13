@@ -1,7 +1,7 @@
 import Sharp from 'sharp';
 import Jimp from 'jimp';
 import Canvas from 'canvas';
-import ColorThief from 'color-thief-node';
+import * as Vibrant from 'node-vibrant';
 import { IProduct } from '../models/Product';
 
 export interface ColorProfile {
@@ -180,21 +180,33 @@ export class VisualSimilarityEngine {
 
   private async extractColorProfile(imageBuffer: Buffer): Promise<ColorProfile> {
     try {
-      const palette = await ColorThief.getPalette(imageBuffer, 6);
-      const dominantColor = await ColorThief.getColor(imageBuffer);
+      const palette = await Vibrant.from(imageBuffer).getPalette();
 
-      const dominantColors = palette.map((color, index) => ({
-        r: color[0],
-        g: color[1],
-        b: color[2],
-        percentage: index === 0 ? 0.4 : 0.6 / (palette.length - 1)
-      }));
+      const swatches = [
+        palette.Vibrant,
+        palette.DarkVibrant,
+        palette.LightVibrant,
+        palette.Muted,
+        palette.DarkMuted,
+        palette.LightMuted
+      ].filter(Boolean);
 
-      const colorPalette = palette.map(color => this.rgbToHex(color[0], color[1], color[2]));
-      
-      const brightness = this.calculateBrightness(dominantColor);
-      const saturation = this.calculateSaturation(dominantColor);
-      const temperature = this.determineTemperature(dominantColor);
+      const dominantColors = swatches.map((swatch, index) => {
+        const rgb = swatch!.getRgb();
+        return {
+          r: Math.round(rgb[0]),
+          g: Math.round(rgb[1]),
+          b: Math.round(rgb[2]),
+          percentage: index === 0 ? 0.4 : 0.6 / (swatches.length - 1)
+        };
+      });
+
+      const colorPalette = swatches.map(swatch => swatch!.getHex());
+      const dominantColor = dominantColors[0] || { r: 128, g: 128, b: 128, percentage: 1.0 };
+
+      const brightness = this.calculateBrightness([dominantColor.r, dominantColor.g, dominantColor.b]);
+      const saturation = this.calculateSaturation([dominantColor.r, dominantColor.g, dominantColor.b]);
+      const temperature = this.determineTemperature([dominantColor.r, dominantColor.g, dominantColor.b]);
 
       return {
         dominantColors,
