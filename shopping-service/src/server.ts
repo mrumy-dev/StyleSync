@@ -15,6 +15,21 @@ import { PriceTrackingService } from './realtime/PriceTrackingService';
 import { NotificationService } from './realtime/NotificationService';
 import { PrivacyManager } from './privacy/PrivacyManager';
 import { JobScheduler } from './background/JobScheduler';
+
+// Import closet management services
+import { ClosetDashboardController } from './ui/ClosetDashboard';
+import { ItemManagementController } from './ui/ItemManagement';
+import { ClosetOrganizationAI } from './ai/ClosetOrganizationAI';
+import { DigitalTwinEngine } from './visualization/DigitalTwinEngine';
+import { MaintenanceTracker } from './maintenance/MaintenanceTracker';
+import { InventoryManager } from './inventory/InventoryManager';
+import { SmartClosetFeatures } from './smart/SmartClosetFeatures';
+import { SmartHomeIntegration } from './integrations/SmartHomeIntegration';
+
+// Import routes
+import closetRoutes from './routes/closetRoutes';
+import itemRoutes from './routes/itemRoutes';
+import smartRoutes from './routes/smartRoutes';
 import {
   setupMiddleware,
   errorHandler,
@@ -40,6 +55,16 @@ class ShoppingServer {
   private notificationService: NotificationService;
   private privacyManager: PrivacyManager;
   private jobScheduler: JobScheduler;
+
+  // Closet management services
+  private dashboardController: ClosetDashboardController;
+  private itemController: ItemManagementController;
+  private organizationAI: ClosetOrganizationAI;
+  private digitalTwinEngine: DigitalTwinEngine;
+  private maintenanceTracker: MaintenanceTracker;
+  private inventoryManager: InventoryManager;
+  private smartFeatures: SmartClosetFeatures;
+  private smartHomeIntegration: SmartHomeIntegration;
   
   constructor() {
     this.app = express();
@@ -50,6 +75,7 @@ class ShoppingServer {
   }
 
   private initializeServices(): void {
+    // Original services
     this.storeManager = new StoreIntegrationManager();
     this.scrapingEngine = new ScrapingEngine();
     this.styleMatchingService = new StyleMatchingService();
@@ -57,6 +83,35 @@ class ShoppingServer {
     this.notificationService = new NotificationService();
     this.privacyManager = new PrivacyManager();
     this.jobScheduler = new JobScheduler();
+
+    // Closet management services
+    this.organizationAI = new ClosetOrganizationAI();
+    this.digitalTwinEngine = new DigitalTwinEngine();
+    this.maintenanceTracker = new MaintenanceTracker(this.notificationService);
+    this.inventoryManager = new InventoryManager();
+    this.smartFeatures = new SmartClosetFeatures();
+    this.smartHomeIntegration = new SmartHomeIntegration();
+
+    // Controllers
+    this.dashboardController = new ClosetDashboardController(
+      this.inventoryManager,
+      this.maintenanceTracker,
+      this.organizationAI
+    );
+    this.itemController = new ItemManagementController(
+      this.inventoryManager,
+      this.maintenanceTracker
+    );
+
+    // Set services on app for route access
+    this.app.set('dashboardController', this.dashboardController);
+    this.app.set('itemController', this.itemController);
+    this.app.set('organizationAI', this.organizationAI);
+    this.app.set('digitalTwinEngine', this.digitalTwinEngine);
+    this.app.set('maintenanceTracker', this.maintenanceTracker);
+    this.app.set('inventoryManager', this.inventoryManager);
+    this.app.set('smartFeatures', this.smartFeatures);
+    this.app.set('smartHomeIntegration', this.smartHomeIntegration);
   }
 
   private setupMiddleware(): void {
@@ -111,6 +166,11 @@ class ShoppingServer {
     this.setupPrivacyRoutes();
     this.setupNotificationRoutes();
     this.setupAdminRoutes();
+
+    // Closet management routes
+    this.app.use('/api/closets', closetRoutes);
+    this.app.use('/api/items', itemRoutes);
+    this.app.use('/api/smart', smartRoutes);
 
     // 404 handler
     this.app.all('*', (req, res, next) => {
