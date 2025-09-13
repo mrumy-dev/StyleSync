@@ -24,7 +24,7 @@
     "sharp": "^0.32.6",
     "jimp": "^0.22.10",
     "canvas": "^2.11.2",
-    "node-vibrant": "^3.2.1",
+    "node-vibrant": "^3.1.6",
     "similarity": "^1.2.1",
     "fuse.js": "^6.6.2",
     "rate-limiter-flexible": "^2.4.2",
@@ -42,10 +42,16 @@
     "@types/node-cron": "^3.0.8",
     "@types/compression": "^1.7.3",
     "@types/uuid": "^9.0.4",
-    "multer": "^1.4.5",
+    "multer": "^1.4.4",
     "@types/multer": "^1.4.7",
     "typescript": "^5.2.2",
-    "tsx": "^3.13.0"
+    "tsx": "^3.13.0",
+    "@tensorflow/tfjs-node": "^4.15.0",
+    "natural": "^6.7.0",
+    "sentiment": "^5.0.2",
+    "compromise": "^14.10.0",
+    "ml-matrix": "^6.11.0",
+    "node-nlp": "^4.27.0"
   },
   "devDependencies": {
     "@types/node": "^20.6.3",
