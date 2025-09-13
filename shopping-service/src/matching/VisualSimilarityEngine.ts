@@ -1,6 +1,6 @@
 import Sharp from 'sharp';
 import Jimp from 'jimp';
-import Canvas from 'canvas';
+
 import * as Vibrant from 'node-vibrant';
 import { IProduct } from '../models/Product';
 

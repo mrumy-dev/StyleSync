@@ -1,6 +1,6 @@
 import Sharp from 'sharp';
 import Jimp from 'jimp';
-import Canvas, { createCanvas, loadImage } from 'canvas';
+
 // import ColorThief from 'color-thief-node'; // Replaced with node-vibrant
 import { VisualSimilarityEngine, VisualFeatures, ColorProfile, SimilarityMatch } from '../matching/VisualSimilarityEngine';
 import { IProduct } from '../models/Product';

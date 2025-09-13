@@ -1,7 +1,7 @@
 import { IProduct } from '../models/Product';
 import { IUserPreferences } from '../models/UserPreferences';
 import { EventEmitter } from 'events';
-import * as tf from '@tensorflow/tfjs-node';
+
 
 export interface RecommendationContext {
   userId: string;
