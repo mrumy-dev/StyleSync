@@ -1,0 +1,132 @@
+/* Main Navigation */
+"tab_home" = "Home";
+"tab_wardrobe" = "Wardrobe";
+"tab_outfits" = "Outfits";
+"tab_profile" = "Profile";
+
+/* Welcome & Onboarding */
+"welcome_title" = "Welcome to StyleSync";
+"welcome_subtitle" = "Your AI Style Assistant";
+"onboarding_wardrobe_title" = "Build Your Digital Wardrobe";
+"onboarding_wardrobe_description" = "Take photos of your clothes to create your personal style collection";
+"onboarding_ai_title" = "AI-Powered Recommendations";
+"onboarding_ai_description" = "Get personalized outfit suggestions based on weather, occasion, and your style";
+"onboarding_personalization_title" = "Learn Your Style";
+"onboarding_personalization_description" = "Rate outfits to help us understand your preferences better";
+"get_started" = "Get Started";
+"skip" = "Skip";
+"continue" = "Continue";
+
+/* Outfit Generation */
+"generate_outfit" = "Generate Outfit";
+"todays_outfit" = "Today's Outfit";
+"outfit_for_weather" = "Perfect for %@°C";
+"rate_outfit" = "Rate This Outfit";
+"save_outfit" = "Save Outfit";
+"share_outfit" = "Share Outfit";
+"regenerate" = "Try Another";
+
+/* Weather & Occasions */
+"weather_sunny" = "Sunny";
+"weather_cloudy" = "Cloudy";
+"weather_rainy" = "Rainy";
+"weather_snowy" = "Snowy";
+"occasion_work" = "Work";
+"occasion_casual" = "Casual";
+"occasion_formal" = "Formal";
+"occasion_date" = "Date";
+"occasion_travel" = "Travel";
+
+/* Wardrobe Management */
+"add_item" = "Add Item";
+"camera" = "Camera";
+"photo_library" = "Photo Library";
+"item_name" = "Item Name";
+"brand" = "Brand";
+"color" = "Color";
+"size" = "Size";
+"price" = "Price";
+"tags" = "Tags";
+"save_item" = "Save Item";
+
+/* Premium Features */
+"upgrade_premium" = "Upgrade to Premium";
+"premium_benefits" = "Premium Benefits";
+"unlimited_outfits" = "Unlimited outfit generation";
+"advanced_analytics" = "Advanced style analytics";
+"exclusive_trends" = "Exclusive Swiss fashion trends";
+"priority_support" = "Priority customer support";
+"monthly_plan" = "Monthly Plan";
+"yearly_plan" = "Yearly Plan";
+"best_value" = "Best Value";
+
+/* Settings */
+"settings" = "Settings";
+"account" = "Account";
+"preferences" = "Preferences";
+"notifications" = "Notifications";
+"privacy" = "Privacy";
+"about" = "About";
+"contact_support" = "Contact Support";
+"sign_out" = "Sign Out";
+
+/* Accessibility Labels */
+"accessibility_outfit_image" = "Generated outfit recommendation";
+"accessibility_rating_button" = "Rate outfit, currently %@ stars";
+"accessibility_weather_icon" = "%@ weather condition";
+"accessibility_clothing_item" = "%@ clothing item";
+"accessibility_close_button" = "Close";
+"accessibility_back_button" = "Go back";
+
+/* Error Messages */
+"error_network" = "Network connection error. Please check your internet connection.";
+"error_camera" = "Camera access denied. Please enable camera access in Settings.";
+"error_photo_library" = "Photo library access denied. Please enable access in Settings.";
+"error_ai_generation" = "Unable to generate outfit. Please try again.";
+"error_save_failed" = "Failed to save item. Please try again.";
+
+/* Success Messages */
+"success_item_saved" = "Item saved to wardrobe";
+"success_outfit_saved" = "Outfit saved successfully";
+"success_feedback_sent" = "Feedback sent. Thank you!";
+
+/* Units and Measurements */
+"temperature_celsius" = "%@°C";
+"temperature_fahrenheit" = "%@°F";
+"size_eu" = "EU %@";
+"size_us" = "US %@";
+"size_uk" = "UK %@";
+
+/* Swiss Specific */
+"swiss_sizes" = "Swiss Sizes";
+"swiss_weather" = "Swiss Weather";
+"swiss_trends" = "Swiss Fashion Trends";
+"local_brands" = "Local Swiss Brands";
+"alpine_style" = "Alpine Style";
+"city_chic" = "Swiss City Chic";
+
+/* Voice Control */
+"voice_generate_outfit" = "Generate outfit";
+"voice_rate_outfit" = "Rate outfit";
+"voice_save_outfit" = "Save outfit";
+"voice_next_outfit" = "Next outfit";
+"voice_previous_outfit" = "Previous outfit";
+
+/* Dynamic Type */
+"text_size_preference" = "Text Size";
+"text_size_small" = "Small";
+"text_size_medium" = "Medium";
+"text_size_large" = "Large";
+"text_size_extra_large" = "Extra Large";
+
+/* Color Blind Support */
+"color_blind_mode" = "Color Blind Mode";
+"color_blind_deuteranopia" = "Deuteranopia";
+"color_blind_protanopia" = "Protanopia";
+"color_blind_tritanopia" = "Tritanopia";
+"color_blind_none" = "None";
+
+/* Motion Settings */
+"reduce_motion" = "Reduce Motion";
+"motion_enabled" = "Full animations enabled";
+"motion_reduced" = "Reduced animations for comfort";

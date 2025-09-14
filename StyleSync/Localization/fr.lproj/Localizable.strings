@@ -1,0 +1,132 @@
+/* Main Navigation */
+"tab_home" = "Accueil";
+"tab_wardrobe" = "Garde-robe";
+"tab_outfits" = "Tenues";
+"tab_profile" = "Profil";
+
+/* Welcome & Onboarding */
+"welcome_title" = "Bienvenue dans StyleSync";
+"welcome_subtitle" = "Votre assistant IA de style";
+"onboarding_wardrobe_title" = "Créez votre garde-robe numérique";
+"onboarding_wardrobe_description" = "Photographiez vos vêtements pour créer votre collection de style personnelle";
+"onboarding_ai_title" = "Recommandations alimentées par l'IA";
+"onboarding_ai_description" = "Obtenez des suggestions de tenues personnalisées basées sur la météo, l'occasion et votre style";
+"onboarding_personalization_title" = "Apprenez votre style";
+"onboarding_personalization_description" = "Évaluez les tenues pour nous aider à mieux comprendre vos préférences";
+"get_started" = "Commencer";
+"skip" = "Passer";
+"continue" = "Continuer";
+
+/* Outfit Generation */
+"generate_outfit" = "Générer une tenue";
+"todays_outfit" = "Tenue d'aujourd'hui";
+"outfit_for_weather" = "Parfait pour %@°C";
+"rate_outfit" = "Évaluer cette tenue";
+"save_outfit" = "Sauvegarder la tenue";
+"share_outfit" = "Partager la tenue";
+"regenerate" = "Essayer une autre";
+
+/* Weather & Occasions */
+"weather_sunny" = "Ensoleillé";
+"weather_cloudy" = "Nuageux";
+"weather_rainy" = "Pluvieux";
+"weather_snowy" = "Neigeux";
+"occasion_work" = "Travail";
+"occasion_casual" = "Décontracté";
+"occasion_formal" = "Formel";
+"occasion_date" = "Rendez-vous";
+"occasion_travel" = "Voyage";
+
+/* Wardrobe Management */
+"add_item" = "Ajouter un article";
+"camera" = "Appareil photo";
+"photo_library" = "Photothèque";
+"item_name" = "Nom de l'article";
+"brand" = "Marque";
+"color" = "Couleur";
+"size" = "Taille";
+"price" = "Prix";
+"tags" = "Étiquettes";
+"save_item" = "Sauvegarder l'article";
+
+/* Premium Features */
+"upgrade_premium" = "Passer à Premium";
+"premium_benefits" = "Avantages Premium";
+"unlimited_outfits" = "Génération illimitée de tenues";
+"advanced_analytics" = "Analyses de style avancées";
+"exclusive_trends" = "Tendances de mode suisses exclusives";
+"priority_support" = "Support client prioritaire";
+"monthly_plan" = "Plan mensuel";
+"yearly_plan" = "Plan annuel";
+"best_value" = "Meilleure valeur";
+
+/* Settings */
+"settings" = "Paramètres";
+"account" = "Compte";
+"preferences" = "Préférences";
+"notifications" = "Notifications";
+"privacy" = "Confidentialité";
+"about" = "À propos";
+"contact_support" = "Contacter le support";
+"sign_out" = "Se déconnecter";
+
+/* Accessibility Labels */
+"accessibility_outfit_image" = "Recommandation de tenue générée";
+"accessibility_rating_button" = "Évaluer la tenue, actuellement %@ étoiles";
+"accessibility_weather_icon" = "Condition météorologique %@";
+"accessibility_clothing_item" = "Vêtement %@";
+"accessibility_close_button" = "Fermer";
+"accessibility_back_button" = "Retour";
+
+/* Error Messages */
+"error_network" = "Erreur de connexion réseau. Veuillez vérifier votre connexion internet.";
+"error_camera" = "Accès à l'appareil photo refusé. Veuillez activer l'accès dans les Paramètres.";
+"error_photo_library" = "Accès à la photothèque refusé. Veuillez activer l'accès dans les Paramètres.";
+"error_ai_generation" = "Impossible de générer la tenue. Veuillez réessayer.";
+"error_save_failed" = "Échec de la sauvegarde. Veuillez réessayer.";
+
+/* Success Messages */
+"success_item_saved" = "Article sauvegardé dans la garde-robe";
+"success_outfit_saved" = "Tenue sauvegardée avec succès";
+"success_feedback_sent" = "Commentaire envoyé. Merci!";
+
+/* Units and Measurements */
+"temperature_celsius" = "%@°C";
+"temperature_fahrenheit" = "%@°F";
+"size_eu" = "EU %@";
+"size_us" = "US %@";
+"size_uk" = "UK %@";
+
+/* Swiss Specific */
+"swiss_sizes" = "Tailles suisses";
+"swiss_weather" = "Météo suisse";
+"swiss_trends" = "Tendances de mode suisses";
+"local_brands" = "Marques suisses locales";
+"alpine_style" = "Style alpin";
+"city_chic" = "Chic urbain suisse";
+
+/* Voice Control */
+"voice_generate_outfit" = "Générer une tenue";
+"voice_rate_outfit" = "Évaluer la tenue";
+"voice_save_outfit" = "Sauvegarder la tenue";
+"voice_next_outfit" = "Tenue suivante";
+"voice_previous_outfit" = "Tenue précédente";
+
+/* Dynamic Type */
+"text_size_preference" = "Taille du texte";
+"text_size_small" = "Petit";
+"text_size_medium" = "Moyen";
+"text_size_large" = "Grand";
+"text_size_extra_large" = "Très grand";
+
+/* Color Blind Support */
+"color_blind_mode" = "Mode daltonien";
+"color_blind_deuteranopia" = "Deutéranopie";
+"color_blind_protanopia" = "Protanopie";
+"color_blind_tritanopia" = "Tritanopie";
+"color_blind_none" = "Aucun";
+
+/* Motion Settings */
+"reduce_motion" = "Réduire les mouvements";
+"motion_enabled" = "Animations complètes activées";
+"motion_reduced" = "Animations réduites pour le confort";
