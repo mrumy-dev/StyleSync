@@ -121,6 +121,12 @@ extension SoundManager {
         case chime = "chime"
         case click = "click"
         case notification = "notification"
+        case cameraShutter = "camera_shutter"
+        case celebration = "celebration"
+        case subtleBeep = "subtle_beep"
+        case swipeSound = "swipe_sound"
+        case magicChime = "magic_chime"
+        case elasticSnap = "elastic_snap"
 
         var filename: String {
             return "\(rawValue).wav"
@@ -132,6 +138,25 @@ extension SoundManager {
 
         func play(volume: Float = 1.0) {
             SoundManager.shared.playSound(self, volume: volume)
+        }
+
+        var description: String {
+            switch self {
+            case .tap: return "Light tap sound"
+            case .success: return "Success chime"
+            case .error: return "Error tone"
+            case .whoosh: return "Whoosh transition"
+            case .pop: return "Pop sound"
+            case .chime: return "Gentle chime"
+            case .click: return "Click sound"
+            case .notification: return "Notification tone"
+            case .cameraShutter: return "Camera shutter click"
+            case .celebration: return "Celebration fanfare"
+            case .subtleBeep: return "Subtle interaction beep"
+            case .swipeSound: return "Swipe gesture sound"
+            case .magicChime: return "Magical sparkle chime"
+            case .elasticSnap: return "Elastic snap sound"
+            }
         }
     }
 }

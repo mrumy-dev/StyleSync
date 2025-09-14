@@ -192,6 +192,107 @@ class HapticManager: ObservableObject {
             print("Failed to play heartbeat haptic pattern: \(error)")
         }
     }
+
+    // MARK: - Premium Haptic Patterns
+
+    func celebrationPattern() {
+        guard isHapticEnabled, let engine = hapticEngine else { return }
+
+        do {
+            var events: [CHHapticEvent] = []
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 1.0)
+
+            for i in 0..<5 {
+                let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(1.0 - Double(i) * 0.1))
+                let event = CHHapticEvent(
+                    eventType: .hapticTransient,
+                    parameters: [sharpness, intensity],
+                    relativeTime: Double(i) * 0.1
+                )
+                events.append(event)
+            }
+
+            let pattern = try CHHapticPattern(events: events, parameters: [])
+            let player = try engine.makePlayer(with: pattern)
+            try player.start(atTime: 0)
+        } catch {
+            print("Failed to play celebration haptic pattern: \(error)")
+        }
+    }
+
+    func subtleNudgePattern() {
+        guard isHapticEnabled, let engine = hapticEngine else { return }
+
+        do {
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.3)
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.4)
+
+            let event = CHHapticEvent(
+                eventType: .hapticTransient,
+                parameters: [sharpness, intensity],
+                relativeTime: 0
+            )
+
+            let pattern = try CHHapticPattern(events: [event], parameters: [])
+            let player = try engine.makePlayer(with: pattern)
+            try player.start(atTime: 0)
+        } catch {
+            print("Failed to play subtle nudge haptic pattern: \(error)")
+        }
+    }
+
+    func cameraShutterPattern() {
+        guard isHapticEnabled, let engine = hapticEngine else { return }
+
+        do {
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 1.0)
+            let intensity1 = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.8)
+            let intensity2 = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.6)
+
+            let click = CHHapticEvent(
+                eventType: .hapticTransient,
+                parameters: [sharpness, intensity1],
+                relativeTime: 0
+            )
+
+            let release = CHHapticEvent(
+                eventType: .hapticTransient,
+                parameters: [sharpness, intensity2],
+                relativeTime: 0.05
+            )
+
+            let pattern = try CHHapticPattern(events: [click, release], parameters: [])
+            let player = try engine.makePlayer(with: pattern)
+            try player.start(atTime: 0)
+        } catch {
+            print("Failed to play camera shutter haptic pattern: \(error)")
+        }
+    }
+
+    func swipePattern() {
+        guard isHapticEnabled, let engine = hapticEngine else { return }
+
+        do {
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.6)
+
+            var events: [CHHapticEvent] = []
+            for i in 0..<3 {
+                let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.3 + Float(i) * 0.2)
+                let event = CHHapticEvent(
+                    eventType: .hapticTransient,
+                    parameters: [sharpness, intensity],
+                    relativeTime: Double(i) * 0.05
+                )
+                events.append(event)
+            }
+
+            let pattern = try CHHapticPattern(events: events, parameters: [])
+            let player = try engine.makePlayer(with: pattern)
+            try player.start(atTime: 0)
+        } catch {
+            print("Failed to play swipe haptic pattern: \(error)")
+        }
+    }
 }
 
 // MARK: - Convenience Extensions
@@ -202,6 +303,7 @@ extension HapticManager {
         case success, error, warning
         case selection
         case customTap, doubleTap, heartbeat
+        case celebration, subtleNudge, cameraShutter, swipe
 
         func trigger() {
             switch self {
@@ -229,6 +331,14 @@ extension HapticManager {
                 HapticManager.shared.doubleTabPattern()
             case .heartbeat:
                 HapticManager.shared.heartbeatPattern()
+            case .celebration:
+                HapticManager.shared.celebrationPattern()
+            case .subtleNudge:
+                HapticManager.shared.subtleNudgePattern()
+            case .cameraShutter:
+                HapticManager.shared.cameraShutterPattern()
+            case .swipe:
+                HapticManager.shared.swipePattern()
             }
         }
     }
